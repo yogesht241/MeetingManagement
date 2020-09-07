@@ -1,0 +1,10 @@
+C:\Users\mithilesh\Documents\Arshi\PersentationLayer\CRUD.DataLayer\bin\Debug\CRUD.DataLayer.dll.config
+C:\Users\mithilesh\Documents\Arshi\PersentationLayer\CRUD.DataLayer\bin\Debug\CRUD.DataLayer.dll
+C:\Users\mithilesh\Documents\Arshi\PersentationLayer\CRUD.DataLayer\bin\Debug\CRUD.DataLayer.pdb
+C:\Users\mithilesh\Documents\Arshi\PersentationLayer\CRUD.DataLayer\bin\Debug\EntityFramework.dll
+C:\Users\mithilesh\Documents\Arshi\PersentationLayer\CRUD.DataLayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\mithilesh\Documents\Arshi\PersentationLayer\CRUD.DataLayer\bin\Debug\EntityFramework.xml
+C:\Users\mithilesh\Documents\Arshi\PersentationLayer\CRUD.DataLayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\mithilesh\Documents\Arshi\PersentationLayer\CRUD.DataLayer\obj\Debug\CRUD.DataLayer.csprojResolveAssemblyReference.cache
+C:\Users\mithilesh\Documents\Arshi\PersentationLayer\CRUD.DataLayer\obj\Debug\CRUD.DataLayer.dll
+C:\Users\mithilesh\Documents\Arshi\PersentationLayer\CRUD.DataLayer\obj\Debug\CRUD.DataLayer.pdb

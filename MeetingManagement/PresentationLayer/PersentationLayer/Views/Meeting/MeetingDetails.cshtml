@@ -1,0 +1,191 @@
+﻿
+@{
+	ViewBag.Title = "MeetingDetails";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<link href="~/themes/jquery-ui-1.12.1.custom/jquery-ui.css" rel="stylesheet" />
+<link href="~/Content/jquery.jqGrid/ui.jqgrid.css" rel="stylesheet" />
+
+
+<script src="~/Scripts/jquery-1.9.1.js"></script>
+<script src="~/Scripts/jquery-ui-1.10.0.js"></script>
+<script src="~/Scripts/i18n/grid.locale-en.js"></script>
+<script src="~/Scripts/jquery.jqGrid.min.js"></script>
+<script src="~/Scripts/MeetingDetails.js"></script>
+<script src="~/Scripts/chosen.jquery.min.js"></script>
+<link href="~/Content/Chosen/chosen.min.css" rel="stylesheet" />
+<br />
+<div class="row">
+
+	<div class="col-xs-4 col-md-2"></div>
+
+	<div id="pnladd" class="col-xs-6 col-md-8">
+		<div class="panel panel-default">
+			<div class="panel-heading" style="background-color:#4B7082;color:white"><h4 align="center">Add New Meeting Records</h4></div>
+			<div class="panel-body">
+				<div class="row">
+					<form class="" id="form1">
+
+						<div class="col-md-5" style="padding-left:80px;">
+							<div class="form-inline">
+								<label for="" id="label">Subject</label>
+
+								<input type="text" class="form-control" maxlength="50" required id="txtSubject">
+							</div>
+							<br />
+							<div class="form-inline">
+								<label for="" id="label">Agenda</label>
+
+								<div id="upperModal">
+									<textarea id="txtAgenda" required class="form-control" cols="26" rows=3></textarea>
+								</div>
+
+							</div>
+							<br />
+							<div class="form-inline">
+								<label for="" id="label">Selected Attendee(s)</label>
+
+								<div id="upperModal">
+									<input type="text" class="form-control" readonly required id="txtAttendees">
+								</div>
+
+							</div>
+							<br/>
+							<input type="submit" class="btn btn-success" id="btnSubmit" value="Submit" />&nbsp;<input type="button" class="btn btn-danger" id="btnReset" value="Cancel" />
+
+						</div>
+
+						<div class="col-md-5" style="padding-left:80px;">
+							<div class="form-inline">
+								<label for="" id="label">Date Time</label>
+								<input type="text" required id="txtDate" readonly class="form-control">
+							</div>
+							<br />
+
+							<br />
+
+							<div class="form-inline">
+								<label for="" id="label">Attendees</label>
+
+								<br />
+
+								<select required id="cmbAttendees" multiple="multiple" data-placeholder="Choose  attendee(s)..." class="form-control chosen-select">
+
+									<option value="test">Rakesh</option>
+									<option value="test2">Yogesh</option>
+									<option value="test3">Suresh</option>
+									<option value="test4">Mahesh</option>
+									<option value="test">Jakesh</option>
+									<option value="test2">Logesh</option>
+									<option value="test3">Muresh</option>
+									<option value="test4">Kahesh</option>
+									<option value="test">Gakesh</option>
+									<option value="test2">Vogesh</option>
+									<option value="test3">Euresh</option>
+									<option value="test4">Cahesh</option>
+
+								</select>
+
+								<div>
+									<input type="button" class="col-md-4" value="Select" id="select-values">
+
+								</div>
+							</div>
+
+						</div>
+
+
+					</form>
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+	<div class="col-xs-6 col-md-2"></div>
+</div>
+
+<div id="tblgrid" class="row">
+	<div style="margin-left:111px"><input type="button" class="btn btn-success text-right" id="btnAddNew" value="Add New Record" /></div>
+	<div class="col-md-10 col-md-offset-1">
+		<div class="alert alert-danger" role="alert" id="alert-Grid"></div>
+		<table align="center" id="list"></table>
+		<div id="pager"></div>
+
+	</div>
+</div>
+
+<script type="text/javascript">
+	$(function () {
+		$("#alert-Grid").hide();
+		//EmployeeDetails.RequiredValidation();
+		MeetingDetails.GetMeetingData();
+		MeetingDetails.insertMeetingDetails();
+
+	});
+
+
+</script>
+<script>
+	$("#btnReset").click(function () {
+		$(this).closest('form').find("input[type=text], textarea,select").val("");
+		$('#cmbAttendees').val('').trigger('chosen:updated');
+	});
+</script>
+
+<script>
+	$(document).ready(function () {
+		$("#cmbAttendees").chosen({ max_selected_options: 10 });
+		$('#pnladd').hide();
+
+	});
+</script>
+<script type="text/javascript">
+	$(function () {
+		$("#txtDate").datepicker({
+			showOn: 'button',
+			buttonImageOnly: true,
+			buttonImage: '/images/calender.png'
+
+		});
+
+	});
+
+</script>
+<script type="text/javascript">
+	$(function () {
+		$("#cmbAttendees").chosen();
+
+	});
+
+</script>
+<script type="text/javascript">
+	$("#select-values").click(function () {
+		//debugger;
+		if ($("select option:selected").length - 1 > 3) {
+			//your code here
+			alert('You can select upto 3 options only');
+			return false;
+		}
+
+		var option_all = $("select option:selected").map(function () {
+			return $(this).text();
+		}).get().join(',');
+		console.log(option_all);
+		mString = option_all.substring(0, option_all.length - 2);
+		$('#txtAttendees').val(mString);
+		$('#txtAttendees').show();
+	});
+</script>
+<script type="text/javascript">
+	$("#btnAddNew").click(function () {
+		$("#cmbAttendees").chosen({ max_selected_options: 10 });
+		$('#pnladd').show();
+		$('#btnAddNew').hide();
+		$('#tblgrid').hide();
+
+	});
+</script>
+

@@ -1,0 +1,8 @@
+C:\Users\mithilesh\Documents\Arshi\PersentationLayer\CRUD.BusinessLayer\bin\Debug\CRUD.BusinessLayer.dll
+C:\Users\mithilesh\Documents\Arshi\PersentationLayer\CRUD.BusinessLayer\bin\Debug\CRUD.BusinessLayer.pdb
+C:\Users\mithilesh\Documents\Arshi\PersentationLayer\CRUD.BusinessLayer\bin\Debug\CRUD.DataLayer.dll
+C:\Users\mithilesh\Documents\Arshi\PersentationLayer\CRUD.BusinessLayer\bin\Debug\EntityFramework.dll
+C:\Users\mithilesh\Documents\Arshi\PersentationLayer\CRUD.BusinessLayer\bin\Debug\CRUD.DataLayer.pdb
+C:\Users\mithilesh\Documents\Arshi\PersentationLayer\CRUD.BusinessLayer\bin\Debug\EntityFramework.xml
+C:\Users\mithilesh\Documents\Arshi\PersentationLayer\CRUD.BusinessLayer\obj\Debug\CRUD.BusinessLayer.dll
+C:\Users\mithilesh\Documents\Arshi\PersentationLayer\CRUD.BusinessLayer\obj\Debug\CRUD.BusinessLayer.pdb
